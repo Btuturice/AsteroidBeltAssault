@@ -15,7 +15,7 @@ namespace Asteroid_Belt_Assault
         private Random rand = new Random();
         private Color[] colors = { Color.White, Color.Yellow, 
                            Color.Wheat, Color.WhiteSmoke, 
-                           Color.SlateGray };
+                           Color.SlateGray};
 
         public StarField(
             int screenWidth,

@@ -25,6 +25,8 @@ namespace Asteroid_Belt_Assault
         public int BoundingXPadding = 0;
         public int BoundingYPadding = 0;
 
+        public Boolean flipped = false;
+
         protected Vector2 location = Vector2.Zero;
         protected Vector2 velocity = Vector2.Zero;
 
@@ -165,7 +167,7 @@ namespace Asteroid_Belt_Assault
                 rotation,
                 new Vector2(frameWidth / 2, frameHeight / 2),
                 1.0f,
-                SpriteEffects.None,
+                flipped ? SpriteEffects.FlipHorizontally : SpriteEffects.None,
                 0.0f);
         }
 

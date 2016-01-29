@@ -90,11 +90,14 @@ namespace Asteroid_Belt_Assault
             if (keyState.IsKeyDown(Keys.Left))
             {
                 playerSprite.Velocity += new Vector2(-1, 0);
+                playerSprite.flipped = false;
             }
 
             if (keyState.IsKeyDown(Keys.Right))
             {
                 playerSprite.Velocity += new Vector2(1, 0);
+                playerSprite.flipped = true;
+
             }
 
             if (keyState.IsKeyDown(Keys.Space))
