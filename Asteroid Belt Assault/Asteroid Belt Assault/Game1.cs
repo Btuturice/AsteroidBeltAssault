@@ -21,6 +21,7 @@ namespace Asteroid_Belt_Assault
 
         enum GameStates { TitleScreen, Playing, PlayerDead, GameOver };
         GameStates gameState = GameStates.TitleScreen;
+        Texture2D gameScreen;
         Texture2D titleScreen;
         Texture2D spriteSheet;
 
@@ -73,6 +74,7 @@ namespace Asteroid_Belt_Assault
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            gameScreen = Content.Load<Texture2D>(@"Textures\GameScreen");
             titleScreen = Content.Load<Texture2D>(@"Textures\TitleScreen");
             spriteSheet = Content.Load<Texture2D>(@"Textures\spriteSheet");
 
@@ -274,6 +276,11 @@ namespace Asteroid_Belt_Assault
                 (gameState == GameStates.PlayerDead) ||
                 (gameState == GameStates.GameOver))
             {
+                spriteBatch.Draw(gameScreen,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
+
                 starField.Draw(spriteBatch);
                 asteroidManager.Draw(spriteBatch);
                 playerManager.Draw(spriteBatch);
@@ -284,7 +291,7 @@ namespace Asteroid_Belt_Assault
                     pericles14,
                     "Score: " + playerManager.PlayerScore.ToString(),
                     scoreLocation,
-                    Color.White);
+                    Color.Black);
 
                 if (playerManager.LivesRemaining >= 0)
                 {
@@ -293,7 +300,7 @@ namespace Asteroid_Belt_Assault
                         "Ships Remaining: " +
                             playerManager.LivesRemaining.ToString(),
                         livesLocation,
-                        Color.White);
+                        Color.Black);
                 }
             }
 
@@ -306,7 +313,7 @@ namespace Asteroid_Belt_Assault
                         this.Window.ClientBounds.Width / 2 -
                           pericles14.MeasureString("G A M E  O V E R !").X / 2,
                         50),
-                    Color.White);
+                    Color.Black);
             }
 
 
