@@ -297,7 +297,7 @@ namespace Asteroid_Belt_Assault
                 {
                     spriteBatch.DrawString(
                         pericles14,
-                        "Ships Remaining: " +
+                        "Fairies Remaining: " +
                             playerManager.LivesRemaining.ToString(),
                         livesLocation,
                         Color.Black);
